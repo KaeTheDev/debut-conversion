@@ -1,0 +1,18 @@
+{
+    "sections": {
+      "hero": { "type": "hero", "settings": {} },
+      "feature-row": { "type": "feature-row", "settings": {} },
+      "feature-columns": { "type": "feature-columns", "settings": {} },
+      "collection": { "type": "collection", "settings": {} },
+      "quotes": { "type": "quotes", "settings": {} },
+      "image-bar": { "type": "image-bar", "settings": {} }
+    },
+    "order": [
+      "hero",
+      "feature-row",
+      "feature-columns",
+      "collection",
+      "quotes",
+      "image-bar",
+    ]
+  }
