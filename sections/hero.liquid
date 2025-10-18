@@ -21,7 +21,6 @@
     <div class="hero-fixed-width hero--adapt"
          id="Hero-{{ section.id }}"
          data-layout="{{ section.settings.hero_layout }}">
-      {%- assign image_url = section.settings.image | image_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
       {%- if section.settings.image.width < max_width -%}
         {%- assign slide_width = section.settings.image.width -%}
       {%- endif -%}
