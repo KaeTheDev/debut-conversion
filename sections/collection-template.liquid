@@ -26,8 +26,9 @@
 
     {% if section.settings.show_collection_image and collection.image %}
       <div class="collection-hero">
-        <div class="collection-hero__image ratio-container lazyload js"
-             data-bgset="{% render 'bgset', image: collection.image %}"
+        <div class="collection-hero__image ratio-container"
+            loading="lazy"
+             imageset="{% render 'bgset', image: collection.image %}"
              data-sizes="auto"
              data-parent-fit="cover"
              style="background-image: url('{{ collection.image | image_url: '300x300' }});"></div>
