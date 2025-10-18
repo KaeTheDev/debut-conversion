@@ -31,17 +31,16 @@
           {% if block.settings.image != blank %}
             {% capture img_id %}TextColumnImage-{{ block.id }}{% endcapture %}
             {% capture wrapper_id %}TextColumnImageWrapper-{{ block.id }}{% endcapture %}
-            {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
             {% include 'image-style', image: block.settings.image, height: max_height, wrapper_id: wrapper_id, img_id: img_id %}
             <div id="{{ wrapper_id }}" class="feature-row__image-wrapper js">
               <div style="padding-top:{{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100}}%;">
                 <img id="{{ img_id }}"
                      class="feature-row__image lazyload"
                      src="{{ block.settings.image | img_url: '300x300' }}"
-                     data-src="{{ img_url }}"
-                     data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
-                     data-aspectratio="{{ block.settings.image.aspect_ratio }}"
-                     data-sizes="auto"
+                     width="{{ section.settings.image.width }}"
+                     height="{{ section.settings.image.height }}"
+                     style="object-position: {{ section.settings.alignment }};"
+                     loading="lazy"
                      alt="{{ block.settings.image.alt | escape }}">
               </div>
             </div>
