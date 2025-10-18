@@ -44,10 +44,18 @@
       {%- endfor -%}
 
       <noscript>
-        {% capture product_image_size %}{{ height }}x{% endcapture %}
-        <img src="{{ featured_media | image_url: product_image_size, scale: product_image_scale }}" alt="{{ featured_media.alt }}" id="FeaturedMedia-{{ section.id }}" class="product-featured-media" style="max-width: {{ height }}px;">
-      </noscript>
-
+      {% capture product_image_size %}{{ height }}x{% endcapture %}
+      <img 
+        src="{{ featured_media | image_url: product_image_size, scale: product_image_scale }}" 
+        alt="{{ featured_media.alt }}" 
+        id="FeaturedMedia-{{ section.id }}" 
+        class="product-featured-media" 
+        style="max-width: {{ height }}px;"
+        width="{{ height }}" 
+        height="{{ height }}"
+      >
+    </noscript>
+    
       {% assign first_3d_model = product.media | where: "media_type", "model" | first %}
 
       {%- if first_3d_model -%}
