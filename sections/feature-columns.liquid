@@ -36,7 +36,7 @@
               <div style="padding-top:{{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100}}%;">
                 <img id="{{ img_id }}"
                      class="feature-row__image lazyload"
-                     src="{{ block.settings.image | img_url: '300x300' }}"
+                     src="{{ block.settings.image | image_url: '300x300' }}"
                      width="{{ section.settings.image.width }}"
                      height="{{ section.settings.image.height }}"
                      style="object-position: {{ section.settings.alignment }};"
@@ -46,7 +46,7 @@
             </div>
             <noscript>
               <p>
-                {{ block.settings.image | img_url: '480x480', scale: 2 | img_tag: block.settings.image.alt, 'feature-row__image' }}
+                {{ block.settings.image | image_url: '480x480', scale: 2 | image_tag: block.settings.image.alt, 'feature-row__image' }}
               </p>
             </noscript>
           {% else %}
